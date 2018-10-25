@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="table-responsive-sm">
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |post|}}
+          <tr>
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+{{#link-to "posts.new" class="btn btn-success"}}
+  New
+{{/link-to}}
