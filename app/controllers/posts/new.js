@@ -12,6 +12,10 @@ export default Controller.extend({
   actions: {
     selectTag(tags) {
       this.set('selectedTags', A(tags));
+    },
+
+    savePost() {
+
     }
   },
 

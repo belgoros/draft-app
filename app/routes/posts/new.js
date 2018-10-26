@@ -6,13 +6,12 @@ export default Route.extend({
   },
 
   actions: {
-    async save() {
+    async savePost() {
       var route = this;
       let controller = this.get('controller');
 
       let post = route.modelFor(route.routeName);
       let selectedTags = controller.get('selectedTags');
-      console.log('selectedTags: '  + selectedTags);
       post.set('tag_ids', selectedTags.mapBy('id'));
 
       await post.save();
