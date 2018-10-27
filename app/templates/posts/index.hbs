@@ -12,6 +12,7 @@
           <tr>
             <td>{{post.title}}</td>
             <td>{{post.body}}</td>
+            <td>{{#link-to "posts.edit" post}}Edit{{/link-to}}</td>
           </tr>
         {{/each}}
       </tbody>
