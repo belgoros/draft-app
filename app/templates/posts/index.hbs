@@ -12,7 +12,16 @@
           <tr>
             <td>{{post.title}}</td>
             <td>{{post.body}}</td>
-            <td>{{#link-to "posts.edit" post}}Edit{{/link-to}}</td>
+            <td>
+              {{#link-to "posts.edit" post}}
+                {{fa-icon "edit"}}
+              {{/link-to}}
+            </td>
+            <td>
+              <button {{action "destroyPost" post}}>
+                {{fa-icon "trash"}}
+              </button>
+            </td>
           </tr>
         {{/each}}
       </tbody>
