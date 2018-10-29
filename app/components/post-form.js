@@ -17,7 +17,7 @@ export default Component.extend({
     },
 
     saveItem() {
-      this.save();
+      this.submitAction();
     }
   },
 
