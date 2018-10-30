@@ -1,10 +1,10 @@
 <form {{action "savePost" on="submit"}}>
-  {{#if post.errors}}
+  {{#if errors}}
     <div class="alert alert-danger" role="alert">
       <ul>
         The following errors should be fixed:
-        {{#each post.validations.errors as |error|}}
-          <li>{{error.message}}</li>
+        {{#each errors as |error|}}
+          <li>{{error}}</li>
         {{/each}}
       </ul>
     </div>
