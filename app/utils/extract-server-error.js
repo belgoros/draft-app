@@ -6,7 +6,7 @@ export default function extractServerError(errors) {
   }
 
   let [ errorObject ] = errors;
-  let { title, detail, source } = errorObject;
+  let { detail, source } = errorObject;
   if (!source) {
     return generalErrorMessage;
   }
