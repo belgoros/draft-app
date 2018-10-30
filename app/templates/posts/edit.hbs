@@ -1,3 +1,3 @@
 {{#post-form post=model submitAction=(action "update")}}
-  <button type="submit" class="btn btn-success">Update</button>
+  <button type="submit" class="btn btn-success" disabled={{v-get model 'isInvalid'}}>Update</button>
 {{/post-form}}
