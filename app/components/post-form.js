@@ -16,7 +16,7 @@ export default Component.extend({
       this.set('post.selectedTags', A(tags));
     },
 
-    saveItem() {
+    savePost() {
       this.submitAction();
     }
   },
