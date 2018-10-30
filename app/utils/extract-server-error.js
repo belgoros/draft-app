@@ -1,5 +1,3 @@
-import { capitalize } from '@ember/string';
-
 const generalErrorMessage = "Something went wrong, sorry.";
 
 export default function extractServerError(errors) {
