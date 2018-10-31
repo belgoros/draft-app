@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import { A } from '@ember/array';
 import EmberObject from '@ember/object';
+import { get, set } from '@ember/object';
 
 export default Component.extend({
   tagName: '',
@@ -12,6 +13,10 @@ export default Component.extend({
   },
 
   actions: {
+    setPostPhoto(blob) {
+      set(get(this, 'post'), 'photo', get(blob, 'signedId'));
+    },
+
     selectTag(tags) {
       this.set('post.selectedTags', A(tags));
     },
