@@ -21,5 +21,6 @@ export default DS.Model.extend(Validations, {
   title: DS.attr('string'),
   body: DS.attr('string'),
   archived: DS.attr('boolean'),
-  tag_ids: DS.attr()
+  tag_ids: DS.attr(),
+  photo: DS.attr('string')
 });
