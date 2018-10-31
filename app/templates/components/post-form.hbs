@@ -43,9 +43,9 @@
     </div>
   </div>
   <div class="form-row">
-      <label>Photo:</label>
-      {{file-upload onFileUploaded=(action 'setPostPhoto') class="form-control-file"}}
-    </div>
+    <label>Photo:</label>
+    {{file-upload onFileUploaded=(action "setPostPhoto") class="form-control-file"}}
+  </div>
 
   {{yield}}
 </form>
