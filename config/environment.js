@@ -45,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    ENV.apiHost = 'https://boiling-tundra-46618.herokuapp.com';
   }
 
   return ENV;
