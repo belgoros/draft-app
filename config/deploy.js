@@ -3,8 +3,10 @@
 
 module.exports = function(deployTarget) {
   let ENV = {
-    build: {}
-    // include other plugin configuration that applies to all deploy targets here
+    build: {
+      environment: deployTarget,
+      outputPath: 'dist'
+    }
   };
 
   ENV["revision-data"] = {
