@@ -1,3 +1,9 @@
 {{#post-form post=model submitAction=(action "save")}}
-  <button type="submit" class="btn btn-success" disabled={{v-get model "isInvalid"}}>Save</button>
+  <button
+    type="submit"
+    class="btn btn-success"
+    disabled={{v-get model "isInvalid"}}
+  >
+    Save
+  </button>
 {{/post-form}}

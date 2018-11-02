@@ -42,6 +42,10 @@
       <label class="form-check-label" for="published">Archived</label>
     </div>
   </div>
+  <div class="form-row">
+    <label>Photo:</label>
+    {{file-upload onFileUploaded=(action "setPostPhoto") class="form-control-file"}}
+  </div>
 
   {{yield}}
 </form>
