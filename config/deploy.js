@@ -7,6 +7,10 @@ module.exports = function(deployTarget) {
     // include other plugin configuration that applies to all deploy targets here
   };
 
+  ENV["revision-data"] = {
+    type: 'version-commit'
+  }
+
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
     // configure other plugins for development deploy target here
