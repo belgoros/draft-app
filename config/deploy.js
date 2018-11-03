@@ -36,7 +36,8 @@ module.exports = function(deployTarget) {
       accessKeyId: process.env.AWS_ACCESS_KEY,
       secretAccessKey: process.env.AWS_SECRET_KEY,
       bucket: 'draft-app',
-      region: 'eu-central-1'
+      region: 'eu-central-1',
+      allowOverwrite: true
     };
   }
   return ENV;
