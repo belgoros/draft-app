@@ -33,6 +33,8 @@ export default Component.extend({
       return post_tag_ids.includes(tag.id);
     });
 
+    filtered.forEach(tag => tag.set('selected', true));
+
     post.set('selectedTags', filtered);
   },
 
