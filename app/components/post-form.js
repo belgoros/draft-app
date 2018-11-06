@@ -1,7 +1,5 @@
 import Component from '@ember/component';
-import { A } from '@ember/array';
 import EmberObject from '@ember/object';
-import { get, set } from '@ember/object';
 
 export default Component.extend({
   tagName: '',
@@ -14,11 +12,19 @@ export default Component.extend({
 
   actions: {
     setPostPhoto(blob) {
-      set(get(this, 'post'), 'photo', get(blob, 'signedId'));
+      this.set('post.photo', blob.get('signedId'));
     },
 
-    selectTag(tags) {
-      this.set('post.selectedTags', A(tags));
+    selectTag(selectedSports) {
+      let all = this._allSportsEntry();
+      if (selectedSports.mapBy('id').includes(all.get('id'))) {
+        this.tags.setEach('selected', true);
+        this.set('post.selectedTags', this.tags);
+      } else {
+        this.tags.setEach('selected', false);
+        selectedSports.setEach('selected', true);
+        this.set('post.selectedTags', selectedSports);
+      }
     },
 
     savePost() {
@@ -32,6 +38,8 @@ export default Component.extend({
     let filtered = this.get('tags').filter(tag => {
       return post_tag_ids.includes(tag.id);
     });
+
+    filtered.forEach(tag => tag.set('selected', true));
 
     post.set('selectedTags', filtered);
   },
@@ -50,8 +58,19 @@ export default Component.extend({
       label: 'Handball'
     });
 
-    let tags = [foot, voley, handball]
+    let tags = [foot, voley, handball];
+    tags.insertAt(0, this._allSportsEntry());
 
     return tags;
+  },
+
+  _allSportsEntry() {
+    let all = EmberObject.create({
+      id: 1111,
+      label: 'All sports'
+    });
+
+    return all;
   }
+
 });

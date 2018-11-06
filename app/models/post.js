@@ -18,9 +18,9 @@ const Validations = buildValidations({
 });
 
 export default DS.Model.extend(Validations, {
-  title: DS.attr('string'),
-  body: DS.attr('string'),
+  title: DS.attr(),
+  body: DS.attr(),
   archived: DS.attr('boolean'),
   tag_ids: DS.attr(),
-  photo: DS.attr('string')
+  photo: DS.attr()
 });
