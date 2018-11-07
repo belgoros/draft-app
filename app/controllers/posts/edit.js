@@ -20,7 +20,7 @@ export default Controller.extend({
 
       let selectedTags = post.get('selectedTags');
       post.set('tag_ids', selectedTags.mapBy('id'));
-      if (post.photo.signed_id) {
+      if (post.get('photo.signed_id')) {
         post.set('photo', post.get('photo.signed_id'));
       }
       try {
