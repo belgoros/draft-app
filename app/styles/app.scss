@@ -2,3 +2,9 @@
 @import "ember-cli-bootstrap-4/bootstrap";
 @import 'ember-power-select/themes/bootstrap';
 @import 'ember-power-select';
+
+#ember-testing-container {
+  font-family: 'avenir next', avenir, sans-serif;
+  color: var(--near-white);
+  background-color: var(--mid-grey) !important;
+}
