@@ -8,7 +8,7 @@ module('Acceptance | posts', function(hooks) {
   setupMirageTest(hooks);
 
   test('Listing posts', async function(assert) {
-    this.server.createList('post', 2);
+    server.createList('post', 2);
     await visit('/posts');
 
     assert.dom('[data-test-post=post-list-item]').exists({ count: 2 }, 'All posts are rendered');
