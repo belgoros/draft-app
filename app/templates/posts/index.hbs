@@ -10,7 +10,7 @@
       </thead>
       <tbody>
         {{#each model as |post|}}
-          <tr>
+          <tr data-test-post="post-list-item">
             <td>{{post.title}}</td>
             <td>{{post.body}}</td>
             <td>
