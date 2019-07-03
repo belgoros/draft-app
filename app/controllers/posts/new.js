@@ -10,7 +10,7 @@ export default Controller.extend({
       post.set('tag_ids', selectedTags.mapBy('id'));
 
       await post.save();
-      this.transitionToRoute('posts');
+      await this.transitionToRoute('posts');
     }
   }
 });
