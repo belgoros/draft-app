@@ -24,16 +24,16 @@
   </div>
   <div class="form-row">
     <div class="form-group col-sm-6">
-      {{#power-select-multiple
-        options=tags
-        selected= post.selectedTags
-        searchField="label"
-        placeholder="Select some tags..."
-        onchange=(action "selectTag")
+      <PowerSelectMultiple
+        @options={{tags}}
+        @selected= {{post.selectedTags}}
+        @searchField={{label}}
+        @placeholder="Select some tags..."
+        @onChange={{action "selectTag"}}
       as |tag|
-      }}
+      >
         {{tag.label}}
-      {{/power-select-multiple}}
+      </PowerSelectMultiple>
     </div>
   </div>
   <div class="form-row">
