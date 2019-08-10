@@ -1,11 +1,11 @@
 import { module, test } from 'qunit';
 import { visit } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
-import setupMirageTest from 'ember-cli-mirage/test-support/setup-mirage';
+import { setupMirage } from 'ember-cli-mirage/test-support';
 
 module('Acceptance | posts', function(hooks) {
   setupApplicationTest(hooks);
-  setupMirageTest(hooks);
+  setupMirage(hooks);
 
   test('Listing posts', async function(assert) {
     server.createList('post', 2);
